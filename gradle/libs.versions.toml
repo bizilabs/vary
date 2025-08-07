@@ -1,13 +1,29 @@
 [versions]
-agp = "8.5.2"
+# gradle
+gradle-android-plugin = "8.5.2"
 kotlin = "2.1.10"
-android-minSdk = "24"
-android-compileSdk = "34"
+android-min-sdk = "24"
+android-compile-sdk = "34"
+compose-multiplatform = "1.8.2"
+compose-hotreload = "1.0.0-beta04"
+kotlinx-coroutines = "1.10.2"
+ktlint = "13.0.0"
+maven-publish = "0.34.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 
 [plugins]
-androidLibrary = { id = "com.android.library", version.ref = "agp" }
-kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.29.0" }
+# android
+android-application = { id = "com.android.application", version.ref = "gradle-android-plugin" }
+android-library = { id = "com.android.library", version.ref = "gradle-android-plugin" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
+# compose
+compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
+compose-hotreload = { id = "org.jetbrains.compose.hot-reload", version.ref = "compose-hotreload" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+# kotlin
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+# other
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
