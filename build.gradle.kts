@@ -1,7 +1,5 @@
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
-//import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
-
 plugins {
     // android
     alias(libs.plugins.android.application) apply false
@@ -14,6 +12,7 @@ plugins {
     alias(libs.plugins.compose.compiler) apply false
     // others
     alias(libs.plugins.ktlint)
+    alias(libs.plugins.kotlin.android) apply false
 }
 
 allprojects {
@@ -42,13 +41,6 @@ allprojects {
                     .relativize(it.file.toURI())
                     .path
                     .contains("/build/")
-            }
-            exclude {
-                projectDir
-                    .toURI()
-                    .relativize(it.file.toURI())
-                    .path
-                    .contains("MainViewController")
             }
         }
     }
