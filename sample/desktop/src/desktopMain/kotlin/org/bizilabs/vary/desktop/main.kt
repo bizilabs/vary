@@ -4,7 +4,6 @@ package org.bizilabs.vary.desktop
 
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
-import io.github.kotlin.fibonacci.org.bizilabs.vary.Vary
 import java.awt.Dimension
 
 fun main() =
@@ -13,7 +12,7 @@ fun main() =
             onCloseRequest = ::exitApplication,
             title = "Vary",
         ) {
-            window.minimumSize = Dimension(100, 650)
+            window.minimumSize = Dimension(100, 100)
             App()
         }
     }

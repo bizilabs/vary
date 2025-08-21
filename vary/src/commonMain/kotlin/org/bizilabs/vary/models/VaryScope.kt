@@ -1,7 +1,6 @@
-package io.github.kotlin.fibonacci.org.bizilabs.vary.models
+package org.bizilabs.vary.models
 
 import androidx.compose.runtime.Composable
-import org.bizilabs.vary.models.VarySize
 
 class VaryLayoutScope {
     internal val content = mutableMapOf<VarySize, @Composable () -> Unit>()

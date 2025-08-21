@@ -3,13 +3,12 @@ package org.bizilabs.vary.desktop
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import io.github.kotlin.fibonacci.org.bizilabs.vary.Vary
-import io.github.kotlin.fibonacci.org.bizilabs.vary.vary
+import org.bizilabs.vary.Vary
+import org.bizilabs.vary.vary
 import org.bizilabs.vary.models.LocalVarySize
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
