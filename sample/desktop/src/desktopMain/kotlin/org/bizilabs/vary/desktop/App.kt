@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import org.bizilabs.vary.Vary
-import org.bizilabs.vary.vary
 import org.bizilabs.vary.models.LocalVarySize
+import org.bizilabs.vary.vary
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
