@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 
 class VaryLayoutScope {
     internal val content = mutableMapOf<VarySize, @Composable () -> Unit>()
-    fun xs(content: @Composable () -> Unit) {
-        this.content[VarySize.XS] = content
+    fun sm(content: @Composable () -> Unit) {
+        this.content[VarySize.SM] = content
     }
 
     fun md(content: @Composable () -> Unit) {
@@ -27,8 +27,8 @@ class VaryLayoutScope {
 
 class VaryValueScope<T> {
     internal val values = mutableMapOf<VarySize, T>()
-    fun xs(value: T) {
-        this.values[VarySize.XS] = value
+    fun sm(value: T) {
+        this.values[VarySize.SM] = value
     }
 
     fun md(value: T) {

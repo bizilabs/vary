@@ -28,8 +28,8 @@ fun AppContent() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         vary({
-            xs {
-                Content("xs")
+            sm {
+                Content("sm")
             }
             md {
                 Content("md")
@@ -44,7 +44,7 @@ fun AppContent() {
                 Content("xxl")
             }
         }) {
-            Content("sm")
+            Content("xs")
         }
     }
 }
