@@ -1,8 +1,5 @@
-# Vary
-A compose multiplatform library for providing varying/dynamic stuff
+<p align="center"><img width=100% src="/gallery/images/vary-light.svg" alt="vary"></p>
 
-```kotlin
-    Vary {
-        
-    }
-```
+# Vary
+**`Vary`** is a lightweight, intuitive **responsive** layout library for Compose
+
