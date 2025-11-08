@@ -1,22 +1,29 @@
 package org.bizilabs.vary
 
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
-import androidx.compose.ui.platform.LocalWindowInfo
+import androidx.compose.ui.Modifier
 import org.bizilabs.vary.models.LocalVarySize
 import org.bizilabs.vary.models.VaryLayoutScope
 import org.bizilabs.vary.models.VarySize
 import org.bizilabs.vary.models.VaryValueScope
 import org.bizilabs.vary.models.rememberVarySize
+import kotlin.math.ceil
 
 @Composable
 fun Vary(
-    width: Int = LocalWindowInfo.current.containerSize.width,
-    content: @Composable () -> Unit
+    width: Int? = null,
+    content: @Composable () -> Unit,
 ) {
-    CompositionLocalProvider(LocalVarySize provides width) {
-        content()
+    BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+        val fullWidth = ceil(maxWidth.value).toInt()
+        val actualWidth = width ?: fullWidth
+        CompositionLocalProvider(LocalVarySize provides actualWidth) {
+            content()
+        }
     }
 }
 
@@ -29,21 +36,23 @@ fun vary(
     val width = LocalVarySize.current
     val size = rememberVarySize(width)
 
-    val scope = remember { VaryLayoutScope() }.apply {
-        content[VarySize.XS] = xs
-        builder()
-    }
+    val scope =
+        remember { VaryLayoutScope() }.apply {
+            content[VarySize.XS] = xs
+            builder()
+        }
 
-    val composableToRender = remember(size, scope.content) {
-        val bestMatch = (VarySize.all.indexOf(size) downTo 0)
-            .asSequence()
-            .mapNotNull { index -> scope.content[VarySize.all[index]] }
-            .firstOrNull()
-        bestMatch ?: xs
-    }
+    val composableToRender =
+        remember(size, scope.content) {
+            val bestMatch =
+                (VarySize.all.indexOf(size) downTo 0)
+                    .asSequence()
+                    .mapNotNull { index -> scope.content[VarySize.all[index]] }
+                    .firstOrNull()
+            bestMatch ?: xs
+        }
 
     composableToRender()
-
 }
 
 @Composable
