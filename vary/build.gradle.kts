@@ -30,6 +30,7 @@ kotlin {
                 implementation(compose.ui)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
+                implementation(libs.kotlinx.collections)
             }
         }
         val commonTest by getting {
@@ -42,9 +43,15 @@ kotlin {
 
 android {
     namespace = "org.bizilabs.vary"
-    compileSdk = libs.versions.android.compile.sdk.get().toInt()
+    compileSdk =
+        libs.versions.android.compile.sdk
+            .get()
+            .toInt()
     defaultConfig {
-        minSdk = libs.versions.android.min.sdk.get().toInt()
+        minSdk =
+            libs.versions.android.min.sdk
+                .get()
+                .toInt()
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

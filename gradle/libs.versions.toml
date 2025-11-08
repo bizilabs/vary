@@ -7,6 +7,7 @@ android-compile-sdk = "35"
 compose-multiplatform = "1.8.2"
 compose-hotreload = "1.0.0-beta04"
 kotlinx-coroutines = "1.10.2"
+kotlinx-collections = "0.4.0"
 ktlint = "13.0.0"
 maven-publish = "0.34.0"
 core-ktx = "1.16.0"
@@ -20,6 +21,7 @@ compose-bom = "2024.09.00"
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+kotlinx-collections = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-collections" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit-version" }

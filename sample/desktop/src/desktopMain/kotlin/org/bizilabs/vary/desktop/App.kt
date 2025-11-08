@@ -7,8 +7,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.sp
 import org.bizilabs.vary.Vary
-import org.bizilabs.vary.models.LocalVarySize
+import org.bizilabs.vary.models.LocalVaryWidth
 import org.bizilabs.vary.vary
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -25,7 +26,7 @@ fun AppContent() {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         vary({
             sm {
@@ -54,9 +55,27 @@ fun Content(text: String) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text(text)
-        Text(text = "${LocalVarySize.current}")
+        Text(
+            text = text,
+            fontSize =
+                vary(24.sp) {
+                    sm(30.sp)
+                    md(48.sp)
+                    lg(56.sp)
+                },
+        )
+        val repeat =
+            vary(1) {
+                sm(2)
+                md(3)
+                lg(4)
+                xl(5)
+                xxl(6)
+            }
+        repeat(repeat) {
+            Text(text = "${LocalVaryWidth.current}")
+        }
     }
 }
