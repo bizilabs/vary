@@ -19,8 +19,5 @@ internal fun rememberVarySize(
     data: ImmutableList<VarySizeData>,
 ): VarySize =
     remember(width) {
-        println("Remember > width = $width")
-        data.last { width >= it.width }.size.also {
-            println("Remember > size = $it")
-        }
+        data.last { width >= it.width }.size
     }

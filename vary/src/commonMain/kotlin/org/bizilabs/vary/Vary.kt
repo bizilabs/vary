@@ -79,7 +79,5 @@ fun <T> vary(
             .asSequence()
             .mapNotNull { index -> scope.values[VarySize.entries[index]] }
             .firstOrNull() ?: xs
-    }.also {
-        println("Vary > value = $it")
     }
 }
