@@ -4,13 +4,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.bizilabs.samples.vary.ui.theme.VaryTheme
 import org.bizilabs.vary.Vary
@@ -40,22 +41,129 @@ fun AppContent() {
     ) {
         vary({
             sm {
-                Content("sm")
+                Column(
+                    modifier =
+                        Modifier
+                            .fillMaxSize()
+                            .padding(16.dp)
+                            .border(1.dp, Color.Black),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
+                    Content("sm")
+                }
             }
             md {
-                Content("md")
+                Row {
+                    Column(
+                        modifier =
+                            Modifier
+                                .weight(1f)
+                                .fillMaxHeight()
+                                .padding(16.dp)
+                                .border(1.dp, Color.Black),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Content("md")
+                    }
+                    Column(
+                        modifier =
+                            Modifier
+                                .weight(1f)
+                                .fillMaxHeight()
+                                .padding(16.dp)
+                                .border(1.dp, Color.Black),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Content("md")
+                    }
+                }
             }
             lg {
-                Content("lg")
+                Row {
+                    Column(
+                        modifier =
+                            Modifier
+                                .weight(1f)
+                                .fillMaxHeight()
+                                .padding(16.dp)
+                                .border(1.dp, Color.Black),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Content("lg")
+                    }
+                    Column(
+                        modifier =
+                            Modifier
+                                .weight(1f)
+                                .fillMaxHeight()
+                                .padding(16.dp)
+                                .border(1.dp, Color.Black),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Content("lg")
+                    }
+                }
             }
             xl {
-                Content("xl")
+                Row {
+                    Column(
+                        modifier =
+                            Modifier
+                                .weight(1f)
+                                .fillMaxHeight()
+                                .padding(16.dp)
+                                .border(1.dp, Color.Black),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Content("xl")
+                    }
+                    Column(
+                        modifier =
+                            Modifier
+                                .weight(1f)
+                                .fillMaxHeight()
+                                .padding(16.dp)
+                                .border(1.dp, Color.Black),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Content("xl")
+                    }
+                    Column(
+                        modifier =
+                            Modifier
+                                .weight(1f)
+                                .fillMaxHeight()
+                                .padding(16.dp)
+                                .border(1.dp, Color.Black),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Content("xl")
+                    }
+                }
             }
             xxl {
                 Content("xxl")
             }
         }) {
-            Content("xs")
+            Column(
+                modifier =
+                    Modifier
+                        .fillMaxSize()
+                        .padding(16.dp)
+                        .border(1.dp, Color.Black),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Content("xs")
+            }
         }
     }
 }
